@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weatherlyn/model/more_info.dart';
+import 'package:weatherlyn/widget/chart.dart';
 import 'package:weatherlyn/widget/neu_box.dart';
 
 class DetailWidget extends StatelessWidget {
@@ -10,6 +11,7 @@ class DetailWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return NeuBoxWidget(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -17,17 +19,19 @@ class DetailWidget extends StatelessWidget {
           Text(
             "More Info",
             style: TextStyle(
-                fontSize: 15,
+                fontSize: 17,
                 fontWeight: FontWeight.w700,
                 color: Color(0XFF66727C)
             ),
           ),
+          SizedBox(height: 20,),
+          ChartWidget(),
           GridView.builder(
             physics: ScrollPhysics(),
             padding: const EdgeInsets.only(top: 10),
             shrinkWrap: true,
             itemCount: data.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, childAspectRatio: 1.5),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, childAspectRatio: 1.6),
             itemBuilder: (context, index) {
               return Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -49,4 +53,5 @@ class DetailWidget extends StatelessWidget {
       ),
     );
   }
+
 }

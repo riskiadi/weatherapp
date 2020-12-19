@@ -34,8 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(height: 35),
                 DetailWidget(data: _weatherRepository.moreInfo()),
                 SizedBox(height: 35),
-                ChartWidget(),
-                SizedBox(height: 35),
                 WeeklyInfoWidget(weeklyInfoModel: _weatherRepository.weeklyInfo(),)
               ],
             ),

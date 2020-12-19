@@ -14,16 +14,32 @@ class WeeklyInfoWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            "This Week",
-            style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w700,
-                color: Color(0XFF66727C)
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "This Week",
+                style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0XFF66727C)
+                ),
+              ),
+              Text(
+                "July 2020",
+                style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0XFF66727C)
+                ),
+              ),
+            ],
           ),
-          SizedBox(height: 20),
-          ListView.builder(
+          SizedBox(height: 10),
+          ListView.separated(
+            separatorBuilder: (context, index) {
+              return Container(height: 0.8, color: Colors.black.withOpacity(0.08),);
+            },
             physics: ScrollPhysics(),
             shrinkWrap: true,
             itemCount: weeklyInfoModel.length,
@@ -38,7 +54,7 @@ class WeeklyInfoWidget extends StatelessWidget {
 
   Container itemList(int index) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 5),
+      padding: const EdgeInsets.symmetric(vertical: 11),
       child: Row(
         children: [
           Expanded(

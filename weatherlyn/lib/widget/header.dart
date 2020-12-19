@@ -30,7 +30,7 @@ class HeaderWidget extends StatelessWidget {
         SizedBox(height: 5),
         Text("Wed 24 July 13:25 pm", style: TextStyle(fontSize: 12, color: Color(0XFF66727C)),),
         SizedBox(height: 10),
-        Text("28℃", style: TextStyle(color: Color(0XFF66727C), fontSize: 20, fontWeight: FontWeight.bold),),
+        Text("25℃", style: TextStyle(color: Color(0XFF66727C), fontSize: 20, fontWeight: FontWeight.bold),),
       ],
     );
   }

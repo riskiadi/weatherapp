@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:weatherlyn/screen/locations.dart';
 
 class CircleButtonWidget extends StatelessWidget {
 
   final IconData icon;
+  final Function onTap;
 
-  const CircleButtonWidget({@required this.icon});
+  const CircleButtonWidget({@required this.icon, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -18,21 +21,17 @@ class CircleButtonWidget extends StatelessWidget {
         ],
         color: Color(0XFFE0E5EC),
       ),
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          color: Color(0XFFE0E5EC),
-        ),
-        child: Material(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(30),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(30),
-              child: Icon(icon, color: Color(0XFF66727C),),
-            onTap: (){},
+      child: InkWell(
+        borderRadius: BorderRadius.circular(30),
+        onTap: onTap??(){},
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: Color(0XFFE0E5EC),
           ),
-        )
+          child: Icon(icon, color: Color(0XFF66727C),),
+        ),
       ),
     );
   }
